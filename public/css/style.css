@@ -4,7 +4,7 @@
     --black: #1c1c1c;
     --gray: #7e7e7e;
     --gray-light: #e4e4e4;
-    --red:#b30000;
+    --red: #b30000;
     --font-size-base: 1rem;
     --font-size-md: clamp(1.25rem, 0.61vw + 1.1rem, 1.58rem);
     --font-size-lg: clamp(1.56rem, 1vw + 1.31rem, 2.11rem);
@@ -13,17 +13,28 @@
 }
 
 body {
-    font-family:'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif;
     color: var(--black);
     font-size: var(--font-size-base);
     background-color: #FAF5EE;
     margin: 0;
 }
 
-a {color: var(--black);}
-h1 {font-size: var(--font-size-xl);}
-h2 {font-size: var(--font-size-lg);}
-h3 {font-size: var(--font-size-md);}
+a {
+    color: var(--black);
+}
+
+h1 {
+    font-size: var(--font-size-xl);
+}
+
+h2 {
+    font-size: var(--font-size-lg);
+}
+
+h3 {
+    font-size: var(--font-size-md);
+}
 
 
 input[type="text"],
@@ -32,13 +43,13 @@ input[type="password"],
 input[type="search"],
 select,
 textarea {
- font-family: 'Poppins', sans-serif;
- font-size: var(--font-size-base);
- display: block;
- box-sizing: border-box;
- width: 100%;
- padding: 0.7rem 0.75rem;
- margin-bottom: 1rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: var(--font-size-base);
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.7rem 0.75rem;
+    margin-bottom: 1rem;
 }
 
 .btn {
@@ -74,7 +85,7 @@ img {
 
 .hero-img {
     max-height: 528px;
-    filter: drop-shadow(0px, 44px, 34px, rgba(0,0,0,0.25));
+    filter: drop-shadow(0px, 44px, 34px, rgba(0, 0, 0, 0.25));
     overflow: hidden;
     border-radius: var(--border-radius);
 }
@@ -84,25 +95,25 @@ img {
     align-items: center;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
-    grid-template-areas: 
-    "logo button"
-    "menu menu";
+    grid-template-areas:
+        "logo button"
+        "menu menu";
     padding-top: 10px;
-  }
+}
 
 @media only screen and (min-width: 768px) {
     .header {
         grid-template-columns: auto 1fr auto;
         grid-template-areas:
-        "logo menu button"
+            "logo menu button"
     }
 }
 
 .header__logo {
-  font-weight: 800;
-  font-size: 25px;
-  text-decoration: none;
-  grid-area: logo;
+    font-weight: 800;
+    font-size: 25px;
+    text-decoration: none;
+    grid-area: logo;
 }
 
 .header__logo:hover {
@@ -112,13 +123,13 @@ img {
 .header__nav {
     grid-area: menu;
     display: flex;
-    justify-content: center; 
+    justify-content: center;
 }
 
 .header__button {
-   grid-area: button;
-   display: flex;
-   justify-content: end; 
+    grid-area: button;
+    display: flex;
+    justify-content: end;
 }
 
 .header__button button {
@@ -173,8 +184,8 @@ img {
 
 /* Home Article List */
 .article__heading {
- margin-top: 4rem;
- font-weight:400   
+    margin-top: 4rem;
+    font-weight: 400
 }
 
 .article-ul {
@@ -183,7 +194,7 @@ img {
     margin: 0;
     font-size: clamp(1.13rem, calc(1.08rem + 0.22vw), 1.25rem);
     display: flex;
-    flex-direction: column;  
+    flex-direction: column;
 }
 
 .article-ul ul {
@@ -207,12 +218,13 @@ img {
 
 @media only screen and (min-width: 768px) {
     .article-ul li a {
-      flex-direction: row;
-      align-items: center;
-      text-decoration: none; 
+        flex-direction: row;
+        align-items: center;
+        text-decoration: none;
     }
+
     .arcticle-list__date {
-       text-align: right; 
+        text-align: right;
     }
 }
 
@@ -231,7 +243,7 @@ img {
 }
 
 .article-ul:hover li:hover {
-    filter:none
+    filter: none
 }
 
 .pagination {
@@ -255,13 +267,62 @@ img {
     text-align: center;
 }
 
+.searchBar {
+    visibility: hidden;
+    transform: translateY(-100px);
+    background-color: var(--black);
+    padding: 4px 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
 
+.searchBar.open {
+    transform: translateY(0);
+    transition: transform 0.1s;
+}
 
+.searchBar input {
+    margin: 0;
+    padding: 0;
+}
 
+#searchClose {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: var(--gray-light);
+    padding: 15px
+}
 
+.admin-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
+.admin-posts {
+    padding: 0;
+    margin: 0;
+}
 
+.admin-post-controls form {
+    display: inline-block;
+}
 
+.admin-post-controls .btn {
+    display: inline-block;
+    background-color: var(--black);
+    color: var(--gray-light);
+    border: 0;
+    text-decoration: none;
+    font-size: .8rem;
+    padding: 4px 8px;
+    line-height: 2;
+}
 
-
-
+.admin-posts li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+}
