@@ -37,6 +37,8 @@ router.get('', async (req, res) => {
             current: page,
             nextPage: hasNextPage ? nextPage : null
         });
+
+
     } catch (error) {
         console.log(error);
     }

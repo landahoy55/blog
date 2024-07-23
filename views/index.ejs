@@ -6,14 +6,13 @@
 <img src="/img/stuart-pearce.jpeg" alt="" class="hero-img" width="750">
 
 <section class="articles">
-
-
     <h2 class="article__heading">Latest Post</h2>
+
     <ul class="article-ul">
         <% data.forEach(post=> { %>
 
             <li>
-                <a href="/post/ <%=post._id %>">
+                <a href="/post/<%= post._id %>">
                     <span>
                         <%= post.title %>
                     </span>
@@ -26,6 +25,6 @@
             <% }) %>
     </ul>
     <% if (nextPage !==null) { %>
-        <a href="/?page=<% nextPage %>" class="pagination">&lt; View older Posts</a>
+        <a href="/?page=<%= nextPage %>" class="pagination">&lt; View older Posts</a>
         <% } %>
 </section>
